@@ -24,6 +24,9 @@ Route::get('tugas4', function () {
 });
 
 Route::get('praktikum2','ViewController@showPraktikum2');
+Route::get('ets','ViewController@showETS');
 
 Route::get('/mutasi','MutasiController@index');
+Route::get('/mutasi/tambah','MutasiController@tambah');
+Route::post('/mutasi/store','MutasiController@store');
 
