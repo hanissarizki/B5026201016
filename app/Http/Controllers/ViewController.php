@@ -10,4 +10,9 @@ class ViewController extends Controller
     {
         return view('prak2web');
     }
+
+    function showETS()
+    {
+        return view('ets1');
+    }
 }
