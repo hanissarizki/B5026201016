@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html>
+@extends('layout.ceria')
+
+@section('tittle','MUTASI PEGAWAI')
+
+@section('isikonten')
 <head>
 	<title>Tugas Laravel Query Builder</title>
 </head>
 <body>
 
-	<h2>Nama Tabel : Mutasi</h2>
+	<h2>Data Mutasi Pegawai</h2>
 
-	<a href="/mutasi/tambah"> + Tambah Pegawai Mutasi Baru</a>
+	<a href="mutasi/tambah"> + Tambah Pegawai Mutasi Baru</a>
 
 	<br/>
 	<br/>
@@ -27,9 +30,9 @@
 			<td>{{ $p->SubDepartemen }}</td>
 			<td>{{ $p->MulaiBertugas }}</td>
 			<td>
-				<a href="/mutasi/edit/{{ $p->ID }}">Edit</a>
+				<a href="mutasi/edit/{{ $p->ID }}">Edit</a>
 				|
-				<a href="/mutasi/hapus/{{ $p->ID }}">Hapus</a>
+				<a href="mutasi/hapus/{{ $p->ID }}">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
@@ -37,4 +40,4 @@
 
 
 </body>
-</html>
+@endsection

@@ -92,8 +92,8 @@
                     <a href="praktikum1">Praktikum1</a>
                     <a href="tugas4">Tugas4</a>
                     <a href="praktikum2">Praktikum2</a>
-                    <a href="https://github.com/laravel/laravel">ETS</a>
-                    <a href="https://github.com/laravel/laravel">Tugas PHP</a>
+                    <a href="ets">ETS</a>
+                    <a href="tugasphp">Tugas PHP</a>
                 </div>
             </div>
         </div>

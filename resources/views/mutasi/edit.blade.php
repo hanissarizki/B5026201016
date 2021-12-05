@@ -8,20 +8,18 @@
 </head>
 <body>
 
-	<h2>Data Pegawai Mutasi</h2>
+	<h2>Edit Mutasi Pegawai</h2>
 
 	<a href="/mutasi"> Kembali</a>
 
 	<br/>
 	<br/>
 
-	<form action="/mutasi/store" method="post">
+	@foreach($mutasi as $p)
+	<form action="/mutasi/update" method="post">
 		{{ csrf_field() }}
-		Pegawai <select id="IDPegawai" name="IDPegawai" required="required">
-            @foreach($pegawai as $p)
-            <option value="{{ $p->pegawai_id }}"> {{ $p->pegawai_nama }}</option>
-            @endforeach
-        </select>
+		<input type="hidden" name="id" value="{{ $p->ID }}"> <br/>
+        ID Pegawai <input type="number" name="idpegawai" required="required"> <br/>
 		Departemen <input type="text" name="departemen" required="required"> <br/>
 		Sub Departemen <input type="text" name="subdepartemen" required="required"> <br/>
 		<div class="form-group">
@@ -40,6 +38,7 @@
         </script><br>
 		<input type="submit" value="Simpan Data">
 	</form>
+	@endforeach
 
 </body>
 @endsection

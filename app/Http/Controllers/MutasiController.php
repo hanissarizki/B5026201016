@@ -18,23 +18,46 @@ class MutasiController extends Controller
 
     public function tambah()
     {
-
-        return view('mutasi.tambah');
+        $pegawai = DB::table('pegawai')->OrderBy('pegawai_nama', 'asc')->get();
+	    return view('mutasi.tambah',['pegawai'=>$pegawai]);
 
     }
 
-    // method untuk insert data ke table pegawai
-public function store(Request $request)
-{
-	// insert data ke table pegawai
+    public function store(Request $request)
+    {
+
 	DB::table('mutasi')->insert([
 		'IDPegawai' => $request->idpegawai,
 		'Departemen' => $request->departemen,
 		'SubDepartemen' => $request->subdepartemen,
 		'MulaiBertugas' => $request->mulaibertugas
 	]);
-	// alihkan halaman ke halaman pegawai
 	return redirect('/mutasi');
 
-}
+    }
+
+    public function edit($id)
+    {
+        $mutasi = DB::table('mutasi')->where('ID',$id)->get();
+	    return view('mutasi.edit',['mutasi' => $mutasi]);
+    }
+
+    public function update(Request $request)
+    {
+
+	DB::table('mutasi')->where('ID',$request->id)->update([
+        'IDPegawai' => $request->idpegawai,
+		'Departemen' => $request->departemen,
+		'SubDepartemen' => $request->subdepartemen,
+		'MulaiBertugas' => $request->mulaibertugas
+	]);
+
+	return redirect('/mutasi');
+    }
+
+    public function hapus($id)
+    {
+        DB::table('mutasi')->where('ID',$id)->delete();
+        return redirect('/mutasi');
+    }
 }

@@ -1,31 +1,28 @@
 @extends('layout.ceria')
 
-@section('tittle','MUTASI PEGAWAI')
+@section('tittle','ABSEN PEGAWAI')
 
 @section('isikonten')
-<head>
-	<title>Tugas Laravel Query Builder</title>
-</head>
-<body>
 
-	<h2>Data Pegawai Mutasi</h2>
+	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
+	<h3>Edit Pegawai</h3>
 
-	<a href="/mutasi"> Kembali</a>
+	<a href="/absen"> Kembali</a>
 
 	<br/>
 	<br/>
 
-	<form action="/mutasi/store" method="post">
+	@foreach($absen as $p)
+	<form action="/absen/update" method="post">
 		{{ csrf_field() }}
+		<input type="hidden" name="id" value="{{ $p->ID }}"> <br/>
 		Pegawai <select id="IDPegawai" name="IDPegawai" required="required">
             @foreach($pegawai as $p)
             <option value="{{ $p->pegawai_id }}"> {{ $p->pegawai_nama }}</option>
             @endforeach
-        </select>
-		Departemen <input type="text" name="departemen" required="required"> <br/>
-		Sub Departemen <input type="text" name="subdepartemen" required="required"> <br/>
+        </select><br>
 		<div class="form-group">
-            <label for="dtpickerdemo" class="col-sm-2 control-label">Mulai Bertugas :</label>
+            <label for="dtpickerdemo" class="col-sm-2 control-label">Tanggal :</label>
             <div class='col-sm-4 input-group date ' id='dtpickerdemo'>
                 <input type='text' class="form-control" name="tanggal" />
                 <span class="input-group-addon">
@@ -38,8 +35,13 @@
                 $('#dtpickerdemo').datetimepicker({format : "YYYY-MM-DD hh:mm", "defaultDate":new Date() });
             });
         </script><br>
-		<input type="submit" value="Simpan Data">
+		Status
+            <input type="radio" id="hadir" name="status" value="H">
+            <label for="hadir">HADIR</label></br>
+            <input type="radio" id="tidak" name="status" value="T" checked="checked">
+            <label for="tidak">TIDAK HADIR</label></br>
+		    <input type="submit" value="Simpan Data">
 	</form>
+	@endforeach
 
-</body>
 @endsection

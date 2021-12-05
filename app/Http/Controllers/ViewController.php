@@ -11,8 +11,18 @@ class ViewController extends Controller
         return view('prak2web');
     }
 
-    function showETS()
+    function showEts()
     {
-        return view('ets1');
+        return view('ets');
+    }
+
+    function showIsian()
+    {
+        return view('formpangkat');
+    }
+
+    function prosespangkatfunc(Request $request)
+    {
+        return view('prosespangkat');
     }
 }
