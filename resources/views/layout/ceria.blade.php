@@ -13,12 +13,13 @@
 	body {
         font-family: serif;
         font-size: 20px;
+        background-color:thistle;
     	}
         .sidebar {
           height: 100%;
           position: fixed;
           z-index: 1;
-          background-color: rgb(27, 8, 78);
+          background-color:#5f51b8;
           overflow-x: hidden;
           transition: 0.1s;
           padding-top: 50px;
@@ -40,30 +41,31 @@
         .header {
             text-align: center;
             font-size: 8px;
-            background-color: #bbe3f5;
-            color: rgb(27, 8, 78);
+            background-color:rgb(70, 16, 70);
+            color:white;
             padding: 10px 15px;
         }
         .footer {
             text-align: center;
             font-size: 8px;
-            background-color: #bbe3f5;
-            color: rgb(27, 8, 78);
+            background-color:rgb(26, 1, 26);
+            color:white;
             padding: 10px 15px;
         }
         .openbtn {
-          font-size: 20px;
-          cursor: pointer;
-          background-color: rgb(27, 8, 78);
-          color: white;
-          padding: 10px 15px;
-          border: none;
+            text align: center;
+            font-size: 20px;
+            cursor: pointer;
+            background-color:rgb(36, 2, 36);
+            color: white;
+            padding: 10px 15px;
+            border: none;
         }
         .openbtn:hover {
           background-color: rgb(66, 104, 148);
         }
         #menu {
-          transition: margin-left .5s;
+          transition: margin-right .5s;
           padding: 16px;
         }
 
@@ -75,12 +77,11 @@
 </head>
 <body class="container m-4">
 	<div id="konten" class="sidebar">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-		<a href="/pegawai">Pegawai</a>
-		<a href="/absen">Absen</a>
-		<a href="/mutasi">Mutasi</a>
-		<a href="#">Minggu depan</a>
-		<a href="#">Praktikum</a>
+		<a href="javascript:void(0)" class="openbtn" onclick="openNav()">Main Menu</a>
+		<a href="http://localhost/B5026201016/public/pegawai">Pegawai</a>
+		<a href="http://localhost/B5026201016/public/absen">Absen</a>
+		<a href="http://localhost/B5026201016/public/mutasi">Mutasi</a>
+		<a href="http://localhost/B5026201016/public/sepedamotor">Sepedamotor</a>
 	</div>
 
 	<div id="menu">
@@ -91,7 +92,7 @@
             <h1>Hanissa Rizki Kurnia</h1>
 			</div><hr>
 
-		<button class="openbtn" onclick="openNav()">Main Menu </button>
+
 		@section('isikonten')
 		@show
 		<br><br><br><br><hr>
@@ -105,10 +106,6 @@
 	  function openNav() {
 		document.getElementById("konten").style.width = "250px";
 		document.getElementById("menu").style.marginLeft = "250px";
-	  }
-	  function closeNav() {
-		document.getElementById("konten").style.width = "0";
-		document.getElementById("menu").style.marginLeft= "0";
 	  }
 	  </script>
 

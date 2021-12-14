@@ -4,8 +4,7 @@
 
 @section('isikonten')
 
-	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
-	<h3>Edit Pegawai</h3>
+	<h3>Edit Absen Pegawai</h3>
 
 	<a href="/absen"> Kembali</a>
 
@@ -16,12 +15,8 @@
 	<form action="/absen/update" method="post">
 		{{ csrf_field() }}
 		<input type="hidden" name="id" value="{{ $p->ID }}"> <br/>
-		Pegawai <select id="IDPegawai" name="IDPegawai" required="required">
-            @foreach($pegawai as $p)
-            <option value="{{ $p->pegawai_id }}"> {{ $p->pegawai_nama }}</option>
-            @endforeach
-        </select><br>
-		<div class="form-group">
+        ID Pegawai <input type="number" name="idpegawai" required="required"> <br/>
+        <div class="form-group">
             <label for="dtpickerdemo" class="col-sm-2 control-label">Tanggal :</label>
             <div class='col-sm-4 input-group date ' id='dtpickerdemo'>
                 <input type='text' class="form-control" name="tanggal" />
