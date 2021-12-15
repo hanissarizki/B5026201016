@@ -68,3 +68,6 @@ Route::get('sepedamotor/hapus/{kodesepedamotor}','SepedamotorController@hapus');
 Route::get('sepedamotor/cari','SepedamotorController@cari');
 Route::get('sepedamotor/view/{kodesepedamotor}','SepedamotorController@detail');
 
+//route CRUD pagecounter
+Route::get('/pagecounter','PagecounterController@index');
+
